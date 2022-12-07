@@ -1,2 +1,2 @@
-# Tensor_network_course
-Notebooks for the master course of tensor network
+# Tensor network course
+Here we will collect the notebooks of the exercises of the tensor network course
