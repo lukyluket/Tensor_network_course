@@ -222,15 +222,14 @@ This motivates the need for **compressed representations** — eventually tensor
 
 ## **6.1 Connected correlation functions**
 
-For operators \(O_1\), \(O_2\) acting on different sites, the **connected correlation** is:
+For operators $O_1$, $O_2$ acting on different sites, the **connected correlation** is:
 
 $$
-C_{12} = \langle O_1 O_2 \rangle
-- \langle O_1\rangle \langle O_2\rangle.
+C_{12} = \langle O_1 O_2 \rangle - \langle O_1\rangle \langle O_2\rangle.
 $$
 
-- If \(C_{12} \neq 0\), measurements are correlated.  
-- If \(C_{12} = 0\), outcomes are independent.
+- If $C_{12} \neq 0$, measurements are correlated.  
+- If $C_{12} = 0$, outcomes are independent.
 
 In the notebook, you compute these quantities for product states of three spins.
 
