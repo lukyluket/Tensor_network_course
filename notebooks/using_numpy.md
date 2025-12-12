@@ -166,7 +166,7 @@ $$
 
 ## **4.1 Product states**
 
-Given single-spin states \(|\phi\rangle\) and \(|\psi\rangle\),
+Given single-spin states $$|\phi\rangle$$ and $$|\psi\rangle$$,
 
 $$
 |\Phi\rangle = |\phi\rangle \otimes |\psi\rangle.
