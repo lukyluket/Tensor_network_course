@@ -33,7 +33,7 @@ $$
 |\phi\rangle = c_0\,|0\rangle + c_1\,|1\rangle,
 $$
 
-with **complex amplitudes** \(c_0, c_1 \in \mathbb{C}\).  
+with **complex amplitudes** $c_0, c_1 \in \mathbb{C}$.  
 The state must be **normalized**:
 
 $$
@@ -42,7 +42,7 @@ $$
 
 In the notebook:
 
-- Students sample random complex values for \(c_0, c_1\).  
+- Students sample random complex values for $c_0, c_1$.  
 - Form a vector `phi`.  
 - Normalize it with `phi / LA.norm(phi)`.
 
@@ -52,8 +52,8 @@ This ensures the state is valid.
 
 # **2. Operators and the Pauli Basis**
 
-An **observable** in quantum mechanics is represented by a **Hermitian operator** \(O = O^\dagger\).  
-On a single spin, any operator is a \(2 	imes 2\) complex matrix.
+An **observable** in quantum mechanics is represented by a **Hermitian operator** $O = O^\dagger$.  
+On a single spin, any operator is a $2 	\times 2$ complex matrix.
 
 ## **2.1 Pauli matrices**
 
@@ -74,13 +74,13 @@ $$
  0&-1\end{pmatrix}.
 $$
 
-Any Hermitian operator on \(\mathbb{C}^2\) can be written as
+Any Hermitian operator on $\mathbb{C}^2$ can be written as
 
 $$
 O = c_0 \sigma_0 + c_1\sigma_x + c_2\sigma_y + c_3\sigma_z,
 $$
 
-with **real** coefficients \(c_\mu\).
+with **real** coefficients $c_\mu$.
 
 ## **2.2 Extracting coefficients by trace identities**
 
@@ -102,7 +102,7 @@ The notebook uses this identity to reconstruct the coefficients from a given ope
 
 # **3. Expectation Values and Basis Changes**
 
-Given a normalized state \(|\phi\rangle\) and observable \(O\), the expectation value is:
+Given a normalized state $|\phi\rangle$ and observable $O$, the expectation value is:
 
 $$
 \langle O \rangle_\phi = \langle \phi | O | \phi \rangle = \phi^\dagger O \phi.
@@ -116,8 +116,8 @@ exp_O = phi.T.conj() @ operator @ phi
 
 ## **3.1 Changing basis**
 
-Sometimes it is useful to change basis using a **unitary matrix** \(U\).  
-For example, \(\sigma_x\) is diagonal in the basis
+Sometimes it is useful to change basis using a **unitary matrix** $U$.  
+For example, $\sigma_x$ is diagonal in the basis
 
 $$
 |+\rangle = \frac{|0\rangle + |1\rangle}{\sqrt 2},
@@ -202,12 +202,12 @@ Expectation values are computed in the same way as in the single-spin case.
 
 A crucial insight behind tensor networks:
 
-> The Hilbert space of \(N\) qubits has dimension \(2^N\).
+> The Hilbert space of $N$ qubits has dimension $2^N$.
 
-To store a **general** state vector you need \(2^N\) complex numbers.  
-In the notebook, you build 2-, 3-, 4-, …, \(N\)-spin states using repeated Kronecker products and record the size of the resulting array.
+To store a **general** state vector you need $2^N$ complex numbers.  
+In the notebook, you build 2-, 3-, 4-, …, $N$-spin states using repeated Kronecker products and record the size of the resulting array.
 
-This growth is **exponential**, and even for moderate \(N\), the number of parameters becomes enormous.
+This growth is **exponential**, and even for moderate $N$, the number of parameters becomes enormous.
 
 The notebook visualizes this both in:
 
@@ -252,7 +252,7 @@ Thus **all connected correlations vanish**, and the state has:
 
 - **no entanglement**,  
 - **simple structure**,  
-- **only \(O(N)\) parameters**.
+- **only $O(N)$ parameters**.
 
 ## **6.3 Product states as trivial tensor networks**
 
@@ -279,7 +279,7 @@ After working through `first_class.ipynb`, students should be able to:
 - Compute quantum expectation values.  
 - Perform basis changes using unitary matrices.  
 - Build multi-spin product states via tensor products.  
-- Construct operators such as \(O \otimes I\) and \(I \otimes O\).  
+- Construct operators such as $O \otimes I$ and $I \otimes O$.  
 - Observe exponential scaling of Hilbert-space dimension.  
 - Understand why product states have no connected correlations.  
 - Appreciate the need for efficient representations → **tensor networks**.
