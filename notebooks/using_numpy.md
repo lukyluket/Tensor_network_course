@@ -1,5 +1,5 @@
-# **Background Notes for `first_class.ipynb`**
-*Tensor Network Course — Session 1*
+# **Background Notes for `using_numpy.ipynb`**
+*Using numpy — Session 1*
 
 These notes provide the background needed to understand the material in the notebook **`first_class.ipynb`**. The goal is to connect basic quantum mechanics and linear algebra with the numerical tools used in the notebook, and to motivate why tensor networks are needed to describe quantum many-body systems efficiently.
 
@@ -279,15 +279,3 @@ After working through `first_class.ipynb`, students should be able to:
 - Understand why product states have no connected correlations.  
 - Appreciate the need for efficient representations → **tensor networks**.
 
----
-
-# **8. What Comes Next**
-
-These foundations prepare you for:
-
-- **Session 2**: From product states to **Matrix Product States (MPS)**.  
-- Understanding **bond dimension**, entanglement, and area laws.  
-- Efficient algorithms (DMRG, TEBD).  
-- Using tensor networks to simulate quantum many-body systems.
-
-This first notebook builds the intuition and numerical habits needed for the rest of the course.
