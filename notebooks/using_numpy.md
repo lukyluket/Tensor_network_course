@@ -19,10 +19,12 @@ We typically choose the computational basis
 
 $$
 |0\rangle =
-\begin{pmatrix}1 \\ 0\end{pmatrix},
+\begin{pmatrix}1 \\
+ 0\end{pmatrix},
 \\quad
 |1\rangle =
-\begin{pmatrix}0 \\ 1\end{pmatrix}.
+\begin{pmatrix}0 \\
+ 1\end{pmatrix}.
 $$
 
 A general pure state is a column vector
@@ -59,13 +61,17 @@ A convenient basis for all single-spin operators is the **Pauli basis**:
 
 $$
 \sigma_0 = I =
-\begin{pmatrix}1&0\\0&1\end{pmatrix},\\quad
+\begin{pmatrix}1&0 \\
+ 0&1\end{pmatrix},\\quad
 \sigma_x =
-\begin{pmatrix}0&1\\1&0\end{pmatrix},\\quad
+\begin{pmatrix}0&1 \\ 
+1&0\end{pmatrix},\\quad
 \sigma_y =
-\begin{pmatrix}0&-i\\i&0\end{pmatrix},\\quad
+\begin{pmatrix}0&-i \\
+ i&0\end{pmatrix},\\quad
 \sigma_z =
-\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
+\begin{pmatrix}1&0 \\
+ 0&-1\end{pmatrix}.
 $$
 
 Any Hermitian operator on \(\mathbb{C}^2\) can be written as
