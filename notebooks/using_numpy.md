@@ -11,32 +11,32 @@ This document is self-contained and written for **Master students in Quantum Tec
 
 A single quantum two-level system (spin-1/2 or qubit) lives in a **two-dimensional Hilbert space**:
 
-\[
+$$
 \mathcal{H} \cong \mathbb{C}^2.
-\]
+$$
 
 We typically choose the computational basis
 
-\[
+$$
 |0\rangle =
 \begin{pmatrix}1 \\ 0\end{pmatrix},
 \\quad
 |1\rangle =
 \begin{pmatrix}0 \\ 1\end{pmatrix}.
-\]
+$$
 
 A general pure state is a column vector
 
-\[
+$$
 |\phi\rangle = c_0\,|0\rangle + c_1\,|1\rangle,
-\]
+$$
 
 with **complex amplitudes** \(c_0, c_1 \in \mathbb{C}\).  
 The state must be **normalized**:
 
-\[
+$$
 |c_0|^2 + |c_1|^2 = 1.
-\]
+$$
 
 In the notebook:
 
@@ -57,7 +57,7 @@ On a single spin, any operator is a \(2 	imes 2\) complex matrix.
 
 A convenient basis for all single-spin operators is the **Pauli basis**:
 
-\[
+$$
 \sigma_0 = I =
 \begin{pmatrix}1&0\\0&1\end{pmatrix},\\quad
 \sigma_x =
@@ -66,13 +66,13 @@ A convenient basis for all single-spin operators is the **Pauli basis**:
 \begin{pmatrix}0&-i\\i&0\end{pmatrix},\\quad
 \sigma_z =
 \begin{pmatrix}1&0\\0&-1\end{pmatrix}.
-\]
+$$
 
 Any Hermitian operator on \(\mathbb{C}^2\) can be written as
 
-\[
+$$
 O = c_0 \sigma_0 + c_1\sigma_x + c_2\sigma_y + c_3\sigma_z,
-\]
+$$
 
 with **real** coefficients \(c_\mu\).
 
@@ -80,15 +80,15 @@ with **real** coefficients \(c_\mu\).
 
 The Pauli matrices are orthogonal under the Hilbert–Schmidt inner product:
 
-\[
+$$
 \text{Tr}(\sigma_\mu \sigma_\nu) = 2\,\delta_{\mu\nu}.
-\]
+$$
 
 Thus,
 
-\[
+$$
 c_\mu = \frac{1}{2} \mathrm{Tr}(\sigma_\mu O).
-\]
+$$
 
 The notebook uses this identity to reconstruct the coefficients from a given operator — a useful exercise in working with operator bases.
 
@@ -98,9 +98,9 @@ The notebook uses this identity to reconstruct the coefficients from a given ope
 
 Given a normalized state \(|\phi\rangle\) and observable \(O\), the expectation value is:
 
-\[
+$$
 \langle O \rangle_\phi = \langle \phi | O | \phi \rangle = \phi^\dagger O \phi.
-\]
+$$
 
 In NumPy:
 
@@ -113,29 +113,29 @@ exp_O = phi.T.conj() @ operator @ phi
 Sometimes it is useful to change basis using a **unitary matrix** \(U\).  
 For example, \(\sigma_x\) is diagonal in the basis
 
-\[
+$$
 |+\rangle = \frac{|0\rangle + |1\rangle}{\sqrt 2},
 \\quad
 |-\rangle = \frac{|0\rangle - |1\rangle}{\sqrt 2}.
-\]
+$$
 
 Define the matrix with these eigenvectors as columns:
 
-\[
+$$
 U_x = \frac{1}{\sqrt 2}
 \begin{pmatrix}
 1 & 1 \\
 1 & -1
 \end{pmatrix}.
-\]
+$$
 
 The transformed state and operator are:
 
-\[
+$$
 |\phi_x\rangle = U_x^\dagger |\phi\rangle,
 \\quad
 O_x = U_x^\dagger O U_x.
-\]
+$$
 
 A key physical point:  
 **All expectation values are basis-independent.**  
@@ -148,23 +148,23 @@ The notebook asks you to verify this computationally.
 
 For two spins, the total Hilbert space is the **tensor product**:
 
-\[
+$$
 \mathcal{H}_{12} = \mathbb{C}^2 \otimes \mathbb{C}^2 \cong \mathbb{C}^4.
-\]
+$$
 
 The basis is:
 
-\[
+$$
 |00\rangle,\; |01\rangle,\; |10\rangle,\; |11\rangle.
-\]
+$$
 
 ## **4.1 Product states**
 
 Given single-spin states \(|\phi\rangle\) and \(|\psi\rangle\),
 
-\[
+$$
 |\Phi\rangle = |\phi\rangle \otimes |\psi\rangle.
-\]
+$$
 
 In NumPy:
 
@@ -176,11 +176,11 @@ Phi = np.kron(phi, psi)
 
 Operators on multi-spin systems are built from tensor products:
 
-\[
+$$
 O_1 = O \otimes I, \\
 O_2 = I \otimes O, \\
 O_{12} = O \otimes O.
-\]
+$$
 
 These correspond to:
 
@@ -218,10 +218,10 @@ This motivates the need for **compressed representations** — eventually tensor
 
 For operators \(O_1\), \(O_2\) acting on different sites, the **connected correlation** is:
 
-\[
+$$
 C_{12} = \langle O_1 O_2 \rangle
 - \langle O_1\rangle \langle O_2\rangle.
-\]
+$$
 
 - If \(C_{12} \neq 0\), measurements are correlated.  
 - If \(C_{12} = 0\), outcomes are independent.
@@ -232,16 +232,16 @@ In the notebook, you compute these quantities for product states of three spins.
 
 For a product state
 
-\[
+$$
 |\psi\rangle = |\phi_1\rangle \otimes \cdots \otimes |\phi_N\rangle,
-\]
+$$
 
 any operator acting on disjoint subsets of spins factorizes:
 
-\[
+$$
 \langle O_1 O_2 \rangle
 = \langle O_1 \rangle \langle O_2 \rangle.
-\]
+$$
 
 Thus **all connected correlations vanish**, and the state has:
 
